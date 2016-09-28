@@ -91,22 +91,19 @@ namespace PacmanExcercise
         [TestMethod]
         public void testPacmanMovesIntoSpacesVeryFast()
         {
-            Left = new Point(-2, 0);
             Assert.AreEqual(
                     Pacman.position().plus(new Point(-2, 0)),
                     SpaceType.nextPositionForGoing(Pacman, Left));
 
-            Right = new Point(2, 0);
             Assert.AreEqual(
                     Pacman.position().plus(new Point(2, 0)),
                     SpaceType.nextPositionForGoing(Pacman, Right));
 
-            Up = new Point(0, 2);
             Assert.AreEqual(
                     Pacman.position().plus(new Point(0, 2)),
                     SpaceType.nextPositionForGoing(Pacman, Up));
 
-            Down = new Point(0, -2);
+
             Assert.AreEqual(
                     Pacman.position().plus(new Point(0, -2)),
                     SpaceType.nextPositionForGoing(Pacman, Down));

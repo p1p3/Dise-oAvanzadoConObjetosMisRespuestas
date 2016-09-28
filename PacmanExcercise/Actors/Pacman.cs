@@ -21,6 +21,7 @@ namespace PacmanExcercise.Actors
             return actualPosition;
         }
 
+
         #endregion
     }
 }
