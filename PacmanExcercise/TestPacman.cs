@@ -33,8 +33,14 @@ namespace PacmanExcercise
         [TestInitialize]
         public void SetUp()
         {
-            BlueGhost = new Ghost();
-            Pacman = new Pacman();
+            Left = new Point(-1, 0);
+            Right = new Point(1, 0);
+            Up = new Point(0, 1);
+            Down = new Point(0, -1);
+
+            var initialPoint = new Point(0, 0);
+            BlueGhost = new Ghost(initialPoint);
+            Pacman = new Pacman(initialPoint);
 
             WallType = new Wall();
             SpaceType = new Space();
@@ -44,7 +50,7 @@ namespace PacmanExcercise
 
         [TestMethod]
         public void TestGhostCanNotGoIntoAWall()
-        {             
+        {
             Assert.AreEqual(
                     BlueGhost.position(),
                     WallType.nextPositionForGoing(BlueGhost, Left));
@@ -85,18 +91,22 @@ namespace PacmanExcercise
         [TestMethod]
         public void testPacmanMovesIntoSpacesVeryFast()
         {
+            Left = new Point(-2, 0);
             Assert.AreEqual(
                     Pacman.position().plus(new Point(-2, 0)),
                     SpaceType.nextPositionForGoing(Pacman, Left));
 
+            Right = new Point(2, 0);
             Assert.AreEqual(
                     Pacman.position().plus(new Point(2, 0)),
                     SpaceType.nextPositionForGoing(Pacman, Right));
 
+            Up = new Point(0, 2);
             Assert.AreEqual(
                     Pacman.position().plus(new Point(0, 2)),
                     SpaceType.nextPositionForGoing(Pacman, Up));
 
+            Down = new Point(0, -2);
             Assert.AreEqual(
                     Pacman.position().plus(new Point(0, -2)),
                     SpaceType.nextPositionForGoing(Pacman, Down));
@@ -106,6 +116,7 @@ namespace PacmanExcercise
         [TestMethod]
         public void testGhostMovesIntoSpacesSlowly()
         {
+
             Assert.AreEqual(
                     BlueGhost.position().plus(new Point(-1, 0)),
                     SpaceType.nextPositionForGoing(BlueGhost, Left));
@@ -114,13 +125,14 @@ namespace PacmanExcercise
                     BlueGhost.position().plus(new Point(1, 0)),
                     SpaceType.nextPositionForGoing(BlueGhost, Right));
 
+
             Assert.AreEqual(
                     BlueGhost.position().plus(new Point(0, 1)),
                     SpaceType.nextPositionForGoing(BlueGhost, Up));
 
             Assert.AreEqual(
-                    BlueGhost.position().plus(new Point(0, -1)),
-                    SpaceType.nextPositionForGoing(BlueGhost, Down));
+                      BlueGhost.position().plus(new Point(0, -1)),
+                      SpaceType.nextPositionForGoing(BlueGhost, Down));
         }
 
         [TestMethod]
@@ -163,7 +175,7 @@ namespace PacmanExcercise
                     GhostHouseDoorType.nextPositionForGoing(Pacman, Down));
         }
 
-                [TestMethod]
+        [TestMethod]
         public void testTransporterMovesPacmanToNewPosition()
         {
             Assert.AreEqual(
@@ -187,6 +199,6 @@ namespace PacmanExcercise
                     LeftTransporterType.nextPositionForGoing(BlueGhost, Right));
         }
 
-    
+
     }
 }

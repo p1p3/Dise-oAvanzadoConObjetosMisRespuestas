@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace PacmanExcercise.Actors
 {
-    public class Pacman:Actor
+    public class Pacman : Actor
     {
+        private Point actualPosition;
+        public Pacman(Point initialPosition)
+        {
+            actualPosition = initialPosition;
+        }
+
         #region Overrides of Actor
 
         public override Point position()
         {
-            throw new NotImplementedException();
+            return actualPosition;
         }
 
         #endregion

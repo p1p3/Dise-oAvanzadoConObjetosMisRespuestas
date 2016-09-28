@@ -12,7 +12,7 @@ namespace PacmanExcercise.Blocks
 
         public override Point nextPositionForGoing(Actor anActor, Point aMovement)
         {
-            throw new NotImplementedException();
+            return anActor.position();
         }
 
         #endregion
