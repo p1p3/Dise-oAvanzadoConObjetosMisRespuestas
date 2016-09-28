@@ -74,7 +74,6 @@ namespace NumerosExercise
 
         public override Numero masFraccion(Fraccion sumando)
         {
-
             Numero denominadorSumando = sumando.getDenominador();
             Numero numeradorSumando = sumando.getNumerador();
 

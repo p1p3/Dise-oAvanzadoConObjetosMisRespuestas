@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdiomExercise2015", "IdiomE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumerosExercise", "NumerosExercise\NumerosExercise.csproj", "{A9896097-157B-452A-BB89-B7D2C5B210B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacmanExcercise", "PacmanExcercise\PacmanExcercise.csproj", "{E8DACE7C-1121-4BAF-A569-06BFE9BD23DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A9896097-157B-452A-BB89-B7D2C5B210B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9896097-157B-452A-BB89-B7D2C5B210B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9896097-157B-452A-BB89-B7D2C5B210B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8DACE7C-1121-4BAF-A569-06BFE9BD23DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8DACE7C-1121-4BAF-A569-06BFE9BD23DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8DACE7C-1121-4BAF-A569-06BFE9BD23DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8DACE7C-1121-4BAF-A569-06BFE9BD23DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
