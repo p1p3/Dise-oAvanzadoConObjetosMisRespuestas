@@ -69,25 +69,14 @@ namespace NumerosExercise
 
         public override Numero mas(Numero sumando)
         {
+            return sumando.masFraccion(this);
+        }
 
+        public override Numero masFraccion(Fraccion sumando)
+        {
 
-            Numero denominadorSumando;
-            Numero numeradorSumando;
-
-
-            if (sumando is Fraccion)
-            {
-                var sumandoComoFraccion = (Fraccion)sumando;
-                denominadorSumando = sumandoComoFraccion.getDenominador();
-                numeradorSumando = sumandoComoFraccion.getNumerador();
-            }
-            else
-            {
-                var valorEntero = (Entero)sumando;
-                denominadorSumando = new Entero(1);
-                numeradorSumando = valorEntero;
-            }
-
+            Numero denominadorSumando = sumando.getDenominador();
+            Numero numeradorSumando = sumando.getNumerador();
 
             Numero nuevoDenominador = denominador.por(denominadorSumando);
             Numero nuevoNumerador1 = numerador.por(denominadorSumando);
@@ -95,56 +84,18 @@ namespace NumerosExercise
             Numero nuevoNumerador = nuevoNumerador1.mas(nuevoNumerador2);
 
             return nuevoNumerador.dividido(nuevoDenominador);
-
-
         }
 
-        public override Numero mas(Fraccion sumando)
+        public override Numero masEntero(Entero sumando)
         {
-
-
-            Numero denominadorSumando;
-            Numero numeradorSumando;
-
-
-            var sumandoComoFraccion = (Fraccion)sumando;
-            denominadorSumando = sumandoComoFraccion.getDenominador();
-            numeradorSumando = sumandoComoFraccion.getNumerador();
-
-
-
-            Numero nuevoDenominador = denominador.por(denominadorSumando);
-            Numero nuevoNumerador1 = numerador.por(denominadorSumando);
-            Entero nuevoNumerador2 = (Entero)denominador.por(numeradorSumando);
+            Numero nuevoDenominador = denominador;
+            Numero nuevoNumerador1 = numerador;
+            Numero nuevoNumerador2 = denominador.por(sumando);
             Numero nuevoNumerador = nuevoNumerador1.mas(nuevoNumerador2);
 
             return nuevoNumerador.dividido(nuevoDenominador);
-
-
         }
 
-        public override Numero mas(Entero sumando)
-        {
-
-
-            Numero denominadorSumando;
-            Numero numeradorSumando;
-
-            var valorEntero = (Entero)sumando;
-            denominadorSumando = new Entero(1);
-            numeradorSumando = valorEntero;
-
-
-
-            Numero nuevoDenominador = denominador.por(denominadorSumando);
-            Numero nuevoNumerador1 = numerador.por(denominadorSumando);
-            Entero nuevoNumerador2 = (Entero)denominador.por(numeradorSumando);
-            Numero nuevoNumerador = nuevoNumerador1.mas(nuevoNumerador2);
-
-            return nuevoNumerador.dividido(nuevoDenominador);
-
-
-        }
 
         public override Numero por(Numero multiplicador)
         {

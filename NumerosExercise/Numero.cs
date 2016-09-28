@@ -18,8 +18,8 @@ namespace NumerosExercise
 
 	    public abstract Numero mas(Numero sumando);
 
-        public abstract Numero mas(Fraccion sumando);
-        public abstract Numero mas(Entero sumando);
+        public abstract Numero masFraccion(Fraccion sumando);
+        public abstract Numero masEntero(Entero sumando);
 
         public abstract Numero por(Numero multiplicador);
         public abstract Numero dividido(Numero divisor);

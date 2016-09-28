@@ -18,28 +18,21 @@ namespace NumerosExercise
 
         public override Numero mas(Numero sumando)
         {
-            if (sumando is Entero)
-            {
-                return new Entero(value + ((Entero)sumando).getValue());
-            }
-            else
-            {
-                return ((Fraccion)sumando).mas(this);
-            }
+            return sumando.masEntero(this);
         }
 
-        public override Numero mas(Entero sumando)
+        public override Numero masEntero(Entero sumando)
         {
 
-                return new Entero(value + ((Entero)sumando).getValue());
+            return new Entero(value + ((Entero)sumando).getValue());
 
- 
+
         }
 
 
-        public override Numero mas(Fraccion sumando)
+        public override Numero masFraccion(Fraccion sumando)
         {
-            return (sumando).mas(this);
+            return (sumando).masEntero(this);
         }
 
         public override Numero por(Numero multiplicador)
