@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PacmanExcercise.Blocks;
 
 namespace PacmanExcercise.Actors
 {
@@ -21,7 +22,10 @@ namespace PacmanExcercise.Actors
             return actualPosition;
         }
 
-
+        public override Point moveToBlockType(ConstructionBlockType block, Point aMove)
+        {
+            return block.nextPositionForGoingPacman(this, aMove);
+        }
         #endregion
     }
 }

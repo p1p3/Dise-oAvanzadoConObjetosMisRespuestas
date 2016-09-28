@@ -7,26 +7,20 @@ using PacmanExcercise.Actors;
 
 namespace PacmanExcercise.Blocks
 {
-    public class Space:ConstructionBlockType
+    public class Space : ConstructionBlockType
     {
         #region Overrides of ConstructionBlockType
 
-        public override Point nextPositionForGoing(Actor anActor, Point aMovement)
+        public override Point nextPositionForGoingGhost(Ghost ghost, Point aMovement)
         {
-            if (anActor is Ghost)
-            {
-                return anActor.position().plus(aMovement);
-            }
-            else if (anActor is Pacman)
-            {
-                return anActor.position().plus(aMovement).plus(aMovement);
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
-            
+            return ghost.position().plus(aMovement);
         }
+
+        public override Point nextPositionForGoingPacman(Pacman pacman, Point aMovement)
+        {
+            return pacman.position().plus(aMovement).plus(aMovement);
+        }
+
 
         #endregion
     }

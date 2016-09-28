@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PacmanExcercise.Blocks;
 
 namespace PacmanExcercise.Actors
 {
-    public class Ghost :Actor
+    public class Ghost : Actor
     {
         private Point actualPosition;
 
@@ -21,6 +22,12 @@ namespace PacmanExcercise.Actors
         {
             return actualPosition;
         }
+
+        public override Point moveToBlockType(ConstructionBlockType block, Point aMove)
+        {
+            return block.nextPositionForGoingGhost(this, aMove);
+        }
+
 
         #endregion
     }

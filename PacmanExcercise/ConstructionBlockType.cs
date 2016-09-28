@@ -9,10 +9,22 @@
  *  
  */
 
+using PacmanExcercise.Actors;
+
 namespace PacmanExcercise
 {
     public abstract class ConstructionBlockType
     {
-        public abstract Point nextPositionForGoing(Actor anActor, Point aMovement);
+        public Point nextPositionForGoing(Actor anActor, Point aMovement)
+        {
+            return anActor.moveToBlockType(this, aMovement);
+
+        }
+
+        public abstract Point nextPositionForGoingGhost(Ghost ghost, Point aMovement);
+
+        public abstract Point nextPositionForGoingPacman(Pacman pacman, Point aMovement);
+
+
     }
 }

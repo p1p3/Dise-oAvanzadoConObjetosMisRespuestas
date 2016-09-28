@@ -9,11 +9,15 @@
  *  
  */
 
+using PacmanExcercise.Blocks;
+
 namespace PacmanExcercise
 {
     public abstract class Actor
     {
         public abstract Point position();
-       
+
+        public abstract Point moveToBlockType(ConstructionBlockType wall,Point aMove);
+
     }
 }

@@ -11,20 +11,14 @@ namespace PacmanExcercise.Blocks
     {
         #region Overrides of ConstructionBlockType
 
-        public override Point nextPositionForGoing(Actor anActor, Point aMovement)
+        public override Point nextPositionForGoingGhost(Ghost ghost, Point aMovement)
         {
-            if (anActor is Ghost)
-            {
-                return anActor.position();
-            }
-            else if (anActor is Pacman)
-            {
-                return new Point(10, 4);
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
+            return ghost.position();
+        }
+
+        public override Point nextPositionForGoingPacman(Pacman pacman, Point aMovement)
+        {
+            return new Point(10, 4);
         }
 
         #endregion
