@@ -50,6 +50,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="FirstItemOfStack.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemOfStack.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="StackTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

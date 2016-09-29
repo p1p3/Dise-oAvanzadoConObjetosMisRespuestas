@@ -10,35 +10,47 @@
  */
 
 using System;
+using System.Collections;
 
 namespace StackExercise
 {
     class Stack
     {
-        public static  String STACK_EMPTY_DESCRIPTION = "Stack is Empty";
-	
-	    public Stack () {
-		    
-	    }
-	
-	    public void push (Object anObject)	{
-            throw new Exception("Implement!");
-	    }
-	
-	    public Object pop()	{
-            throw new Exception("Implement!");
-        }
-	
-	    public Object top()	{
-            throw new Exception("Implement!");
+        public static String STACK_EMPTY_DESCRIPTION = "Stack is Empty";
+
+        private Item lastItem;
+
+        public Stack()
+        {
+            lastItem = new FirstItemOfStack();
         }
 
-	    public bool isEmpty()	{
-            throw new Exception("Implement!");
+        public void push(Object anObject)
+        {
+            var nextObject = new ItemOfStack(lastItem, anObject, lastItem.Posicion() + 1);
+            lastItem = nextObject;
         }
 
-	    public int size() {
-            throw new Exception("Implement!");
+        public Object pop()
+        {
+            var objectToReturn = lastItem.Contenido();
+            lastItem = lastItem.Anterior();
+            return objectToReturn;
         }
-   }
+
+        public Object top()
+        {
+            return lastItem.Contenido();
+        }
+
+        public bool isEmpty()
+        {
+            return lastItem.isEmpty();
+        }
+
+        public int size()
+        {
+            return lastItem.Posicion();
+        }
+    }
 }
